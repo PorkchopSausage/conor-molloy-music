@@ -474,6 +474,42 @@ main {
     transform: translateY(0);
 }
 
+/* Thank You Message */
+.thank-you-message {
+    max-width: 600px;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.thank-you-content {
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.thank-you-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--secondary-color);
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+
+.thank-you-content h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 /* Footer */
 footer {
     background-color: var(--bg-dark);
