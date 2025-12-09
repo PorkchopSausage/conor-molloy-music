@@ -63,5 +63,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Set form redirect URL dynamically
+    const formNextInput = document.getElementById('form-next');
+    if (formNextInput) {
+        const currentUrl = window.location.origin + window.location.pathname;
+        formNextInput.value = currentUrl + '?success=true';
+    }
+
+    // Check for form submission success
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        const contactLayout = document.getElementById('contact-layout');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        
+        if (contactLayout && thankYouMessage) {
+            contactLayout.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+            
+            // Clean up URL by removing the query parameter
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }
 });
 
