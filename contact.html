@@ -34,7 +34,19 @@
 
         <section class="contact">
             <div class="container">
-                <div class="contact-layout">
+                <!-- Thank You Message -->
+                <div id="thank-you-message" class="thank-you-message" style="display: none;">
+                    <div class="thank-you-content">
+                        <svg class="thank-you-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h2>Thank You!</h2>
+                        <p>Thank you for submitting your message. I'll get back to you soon!</p>
+                    </div>
+                </div>
+                
+                <div class="contact-layout" id="contact-layout">
                     <div class="social-links-vertical">
                         <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -57,9 +69,9 @@
                     </div>
                     
                     <div class="contact-form-wrapper">
-                        <form class="contact-form" action="https://formsubmit.co/ewan.thompson@aol.com" method="POST">
+                        <form class="contact-form" id="contact-form" action="https://formsubmit.co/ewan.thompson@aol.com" method="POST">
                             <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="">
+                            <input type="hidden" name="_next" id="form-next" value="">
                             
                             <div class="form-group">
                                 <label for="name" class="form-label">Your Name <span class="required">*</span></label>
@@ -98,5 +110,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
-
 
