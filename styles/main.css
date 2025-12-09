@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
+    --primary-color: #413941;
+    --secondary-color: #4c18c4;
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
     --bg-primary: #ffffff;
@@ -17,11 +17,25 @@
     --transition: all 0.3s ease;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .container {
@@ -42,10 +56,11 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 20px;
+    padding: 2rem 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .nav-logo {
@@ -72,6 +87,7 @@ body {
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.3rem;
     transition: var(--transition);
     position: relative;
     padding: 0.5rem 0;
@@ -106,6 +122,10 @@ body {
     cursor: pointer;
     padding: 0.5rem;
     gap: 4px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .mobile-menu-toggle span {
@@ -120,7 +140,7 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
-    padding: 8rem 20px;
+    padding: 4rem 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -156,6 +176,23 @@ body {
     font-weight: 300;
 }
 
+/* Profile Image Section */
+.profile-image {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+    max-width: 400px;
+    width: 100%;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    display: block;
+}
+
 /* Page Header */
 .page-header {
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
@@ -178,44 +215,53 @@ body {
 
 /* About Section */
 .about {
-    padding: 5rem 20px;
+    padding: 3rem 20px;
     background-color: var(--bg-primary);
+}
+
+.about-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.about-wrapper::after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
     position: relative;
     display: inline-block;
-    width: 100%;
+    margin-top: 0;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 60px;
     height: 4px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
+    z-index: 1;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    text-align: center;
+    text-align: left;
+    display: block;
 }
 
 /* Portfolio Section */
@@ -414,7 +460,32 @@ footer p {
     }
 
     .hero {
-        padding: 5rem 20px;
+        padding: 3rem 20px;
+    }
+
+    .profile-image {
+        float: none;
+        margin: 0 auto 2rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .profile-img {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-text {
+        text-align: center;
     }
 }
 
